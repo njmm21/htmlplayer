@@ -5,6 +5,7 @@
         <title>HTML Player</title>
 
         <style>
+
             @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
 
             h1 {
@@ -26,17 +27,32 @@
                 document.getElementById("url").value = document.getElementById("presetlist").value;
             }
 
+            function changeTheme() {
+                var whiteOnDarkElements = document.getElementsByClassName("whiteOnDark")
+                if (document.getElementById("pageTheme").checked) {
+                    for (let i = 0; i < whiteOnDarkElements.length; i++) {
+                        whiteOnDarkElements[i].style.color = "white";
+                    }
+                    document.body.style.backgroundColor = "#1a1a1a";
+                } else {
+                    for (let i = 0; i < whiteOnDarkElements.length; i++) {
+                        whiteOnDarkElements[i].style.color = "black";
+                    }
+                    document.body.style.backgroundColor = "white";
+                }
+            }
+
         </script>
         
     </head>
 
     <body>
 
-        <h1>HTML Player</h1>
-        <p style="position: relative; top: -30px;">by tingatales</p>
+        <h1 class="whiteOnDark">HTML Player</h1>
+        <p style="position: relative; top: -30px;" class="whiteOnDark">by tingatales</p>
 
         <input type="text" size=50px placeholder="iFrame Source URL" id="url"/> <button style="width: 75px;" onclick="run()">Load</button>
-        <h3 style="font-family: 'Roboto Mono';">Presets</h3>
+        <h3 style="font-family: 'Roboto Mono';" class="whiteOnDark">Presets</h3>
         <select name="presets" id="presetlist" onchange="loadpreset()" style="width: 200px; position: relative; top: -10px;">
 
             <option value="">Choose a preset...</option>
@@ -58,7 +74,9 @@
             <option value="https://games.cdn.famobi.com/html5games/s/soccer-heads/v310/?fg_domain=play.famobi.com&fg_aid=A1000-1&fg_uid=6fb4a624-f2a2-4136-bc84-3290ca582156&fg_pid=4638e320-4444-4514-81c4-d80a8c662371&fg_beat=770&original_ref=https%3A%2F%2Fgames.famobi.com%2F">Soccer Heads</option>
 
         </select>
-        <p style="position: relative; top: -15px;"> Container will appear broken until a URL is loaded. </p>
+        <br>
+        <input type="checkbox" id="pageTheme" onchange="changeTheme()"/> <span class="whiteOnDark">Dark Theme</span>
+        <p style="position: relative; top: -15px;" class="whiteOnDark">Container will appear broken until a URL is loaded.</p>
 
         <br>
         <iframe src="null" width=1200 height=640 id="iframe"></iframe>
