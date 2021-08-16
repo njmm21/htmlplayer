@@ -35,7 +35,7 @@
         <h1>HTML Player</h1>
         <p style="position: relative; top: -30px;">by tingatales</p>
 
-        <input type="text" size=50px placeholder="Raw HTML URL" id="url"/> <button style="width: 75px;" onclick="run()">Load</button>
+        <input type="text" size=50px placeholder="iFrame Source URL" id="url"/> <button style="width: 75px;" onclick="run()">Load</button>
         <h3 style="font-family: 'Roboto Mono';">Presets</h3>
         <select name="presets" id="presetlist" onchange="loadpreset()" style="width: 200px; position: relative; top: -10px;">
 
@@ -44,8 +44,16 @@
             <option value="https://rawcdn.githack.com/scheng123321/tmm-html5-cdn1/51a72f0faa2d9cd524a0c11b4ca368350f988458/slope/index.html">Slope</option>
             <option value="https://rawcdn.githack.com/scheng123321/tmm-html5-cdn1/51a72f0faa2d9cd524a0c11b4ca368350f988458/vex3/index.html">Vex 3</option>
             <option value="https://rawcdn.githack.com/scheng123321/tmm-html5-cdn1/51a72f0faa2d9cd524a0c11b4ca368350f988458/vex4/index.html">Vex 4</option>
+            <option value="//html5.gamedistribution.com/rvvASMiM/f120262ab72743039fbce88c1f370df8/?gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2h0bWw1LWdhbWVzLmlvLyIsInBhcmVudERvbWFpbiI6Imh0bWw1LWdhbWVzLmlvIiwidG9wRG9tYWluIjoiaHRtbDUtZ2FtZXMuaW8iLCJoYXNJbXByZXNzaW9uIjpmYWxzZSwibG9hZGVyRW5hYmxlZCI6dHJ1ZSwiaG9zdCI6Imh0bWw1LmdhbWVkaXN0cmlidXRpb24uY29tIiwidmVyc2lvbiI6IjEuNC43In0%253D">Vex 5</option>
             <option value="https://rawcdn.githack.com/scheng123321/tmm-html5-cdn1/51a72f0faa2d9cd524a0c11b4ca368350f988458/madalin-cars-multiplayer/index.html">Madalin Cars Multiplayer</option>
             <option value="https://html5.gamedistribution.com/rvvASMiM/308d826f20034d7b972f25258c8d0a44/?gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2h0bWw1LWdhbWVzLmlvLyIsInBhcmVudERvbWFpbiI6Imh0bWw1LWdhbWVzLmlvIiwidG9wRG9tYWluIjoiaHRtbDUtZ2FtZXMuaW8iLCJoYXNJbXByZXNzaW9uIjpmYWxzZSwibG9hZGVyRW5hYmxlZCI6dHJ1ZSwiaG9zdCI6Imh0bWw1LmdhbWVkaXN0cmlidXRpb24uY29tIiwidmVyc2lvbiI6IjEuNC43In0%253D">Soccer Random</option>
+            <option value="//html5.gamedistribution.com/rvvASMiM/5c20635d0a5348a98f5a4eda5c023b79/?gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2h0bWw1LWdhbWVzLmlvLyIsInBhcmVudERvbWFpbiI6Imh0bWw1LWdhbWVzLmlvIiwidG9wRG9tYWluIjoiaHRtbDUtZ2FtZXMuaW8iLCJoYXNJbXByZXNzaW9uIjpmYWxzZSwibG9hZGVyRW5hYmxlZCI6dHJ1ZSwiaG9zdCI6Imh0bWw1LmdhbWVkaXN0cmlidXRpb24uY29tIiwidmVyc2lvbiI6IjEuNC43In0%253D">Tug The Table</option>
+            <option value="https://www.lexaloffle.com/bbs/widget.php?pid=24981">Stranded Isle</option>
+            <option value="https://www.crazygames.com/embed/shellshockersio">Shell Shockers</option>
+            <option value="https://www.crazygames.com/embed/minecraft-classic">Minecraft Classic</option>
+            <option value="https://www.crazygames.com/embed/krunker-io">Krunker</option>
+            <option value="https://www.crazygames.com/embed/learn-to-fly">Learn to Fly</option>
+
 
         </select>
         <p style="position: relative; top: -15px;"> Container will appear broken until a URL is loaded. </p>
