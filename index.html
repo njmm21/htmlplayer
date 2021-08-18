@@ -4,6 +4,8 @@
     <head>
         <title>HTML Player</title>
 
+        <link rel="shortcut icon" id="favicon"/>
+
         <style>
 
             @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
@@ -24,7 +26,7 @@
             }
 
             function loadpreset() {
-                document.getElementById("url").value = document.getElementById("presetlist").value;
+                document.getElementById("url").value = document.getElementById("presetList").value;
             }
 
             function changeTheme() {
@@ -42,6 +44,15 @@
                 }
             }
 
+            function cloakTab() {
+                document.title = document.getElementById("cloakInput").value;
+                document.getElementById("cloakInput").value = "";
+            }
+
+            function cloakIcon() {
+                document.getElementById("favicon").setAttribute("href", document.getElementById("iconList").value);
+            }
+
         </script>
         
     </head>
@@ -53,7 +64,7 @@
 
         <input type="text" size=50px placeholder="iFrame Source URL" id="url"/> <button style="width: 75px;" onclick="run()">Load</button>
         <h3 style="font-family: 'Roboto Mono';" class="whiteOnDark">Presets</h3>
-        <select name="presets" id="presetlist" onchange="loadpreset()" style="width: 200px; position: relative; top: -10px;">
+        <select id="presetList" onchange="loadpreset()" style="width: 200px; position: relative; top: -10px;">
 
             <option value="">Choose a preset...</option>
             <option value="https://ruffle.rs/demo/">Flash Emulator</option>
@@ -76,10 +87,23 @@
 
         </select>
         <br>
-        <input type="checkbox" id="pageTheme" onchange="changeTheme()"/> <span class="whiteOnDark">Dark Theme</span>
-        <p style="position: relative; top: -15px;" class="whiteOnDark">Container will appear broken until a URL is loaded.</p>
-
+        <h3 style="font-family: 'Roboto Mono';" class="whiteOnDark">Settings</h3>
+        <input type="text" id="cloakInput" placeholder="Cloak Tab Title..." size=30px/> <button style="width: 90px;" onclick="cloakTab()">Cloak Title</button> 
         <br>
+        <select id="iconList" style="width: 247px;">
+        
+            <option value="none">Cloak Tab Icon...</option>
+            <option value="google.ico">Google</option>
+            <option value="https://icons.iconarchive.com/icons/marcus-roberto/google-play/256/Google-Drive-icon.png">Google Drive</option>
+            <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Google_Classroom_icon.svg/1200px-Google_Classroom_icon.svg.png">Google Classroom</option>
+        
+        </select>
+        <button style="width: 90px;" onclick="cloakIcon()">Cloak Icon</button>
+        <br>
+
+        <input type="checkbox" id="pageTheme" onchange="changeTheme()"/> <span class="whiteOnDark">Dark Theme</span>
+        <p style="position: relative; top: -15px; margin-top: 25px;" class="whiteOnDark">Container will appear broken until a URL is loaded.</p>
+
         <iframe src="null" width=1200 height=640 id="iframe"></iframe>
         <p class="whiteOnDark">Some preset applications may include advertisements that we are not associated with or collect revenue from.</p>
 
